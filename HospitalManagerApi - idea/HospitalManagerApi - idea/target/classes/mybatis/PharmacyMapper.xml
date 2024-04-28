@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.rabbiter.hospital.mapper.PharmacyMapper">
+    <select id="login" parameterType="Map" resultType="com.rabbiter.hospital.pojo.Pharmacy">
+        SELECT * FROM pharmacy WHERE ph_id = #{phId} AND ph_password = #{phPassword}
+    </select>
+    <delete id="deletePharmacyById" parameterType="int" >
+        DELETE FROM pharmacy
+        WHERE ph_id = #{pharmacyId}
+    </delete>
+
+
+    <select id="findPharmacyBySection" resultType="com.rabbiter.hospital.pojo.Pharmacy" parameterType="String">
+        select ph_id,ph_name,ph_gender from pharmacy
+    </select>
+    <update id="updateStar">
+        update pharmacy set  where ph_id = #{phId}
+    </update>
+</mapper>

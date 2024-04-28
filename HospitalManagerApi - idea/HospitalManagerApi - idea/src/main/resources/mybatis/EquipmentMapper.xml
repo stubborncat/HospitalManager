@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.rabbiter.hospital.mapper.EquipmentMapper">
+    <select id="login" parameterType="Map" resultType="com.rabbiter.hospital.pojo.Equipment">
+        SELECT * FROM equipment WHERE e_id = #{eId} AND e_password = #{ePassword}
+    </select>
+    <delete id="deleteEquipmentById" parameterType="int" >
+        DELETE FROM equipment
+        WHERE e_id = #{equipmentId}
+    </delete>
+
+
+    <select id="findEquipmentBySection" resultType="com.rabbiter.hospital.pojo.Equipment" parameterType="String">
+        select e_id,e_name,e_gender from equipment
+    </select>
+    <update id="updateStar">
+        update equipment set  where e_id = #{eId}
+    </update>
+</mapper>
